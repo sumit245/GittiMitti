@@ -1,0 +1,290 @@
+.container {
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+ul {
+  list-style-type: disc; /* Ensures that bullets are displayed */
+  padding-left: 20px; /* Adds space for bullets */
+}
+.logo {
+  height: 6em;
+  width: 6em;
+}
+.box {
+  border-style: solid;
+  border-color: #BFBFBF;
+  border-width: 1px;
+  width: 25vw;
+  height: 55vh;
+  padding: 20px;
+  border-radius: 6px;
+}
+.text {
+  margin-top :8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.textInput {
+  width: 100%;
+  height: 6vh;
+  border-color: #BFBFBF;
+  border-width: 1px;
+  border-radius: 8px;
+}
+.continue_button {
+  width: 100%;
+  height: 6vh;
+  background-color: #ffbf00;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+.textSmall {
+  font-size: 12px;
+  margin-top: 8px;
+}
+.transparentButton {
+  width: 26vw;
+  height: 5vh;
+  border-color: #a0a0a0;
+  border-width: 1px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.SignIn_footer {
+  width: 100vw;
+  height: 25vh;
+  /* background-color: hwb(0 94% 5% / 0.947); */
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #eaeaea;
+}
+.spaceEven {
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width: 400px;
+}
+
+.bigHeading{
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.background{
+  background-color: #dddddd;
+  width: 100%;
+}
+.row-wise{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80vw;
+  align-items: center;
+  margin-left: 110px;
+  margin-top: 20px;
+  padding: 20px;
+  padding-bottom: 10vh;
+}
+.smallContainers{
+  width: 39vh;
+  background-color: #fff;
+  height: 36vh;
+  margin-bottom: 40px;
+}
+.smallimg{
+  height: 100%;
+  width: 100%;
+}
+.mediumtext{
+  font-size: 20px;
+  font-weight: 500;
+  padding:2px
+}
+/* .AddToCart{
+  background-color: #ffbf00;
+  margin-right: 10px;
+  height: 5vh;
+  width: 6vw;
+  border-radius: 6px;
+  margin-left: 24px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #f5ebeb;
+  font-weight: 500;
+} */
+
+.weare{
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+  height: 40vh;
+  padding-left: 80px;
+  padding-top: 20px;
+  flex-direction: column;
+  padding-right: 40px;
+  justify-content: space-around;
+  padding-bottom: 50px;
+}
+
+.column{
+  width: 30%;
+  height:100vh;
+  justify-content: start;
+}
+
+.leftImg{
+  border-radius: 4px;
+}
+.bg-img{
+  width: 100vw;
+  height: 35vh;
+  object-fit:cover
+}
+/* Container for the whole page layout */
+/* Container for the whole page layout */
+.pageContainer {
+  display: flex;
+  min-height: 100vh; /* At least full viewport height */
+}
+
+/* Styles for grey background container */
+.greyBackground {
+  flex: 1; /* Takes up the remaining space */
+  background-color: #ededed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start of the container */
+  padding: 50px 0; /* Adds vertical spacing (top and bottom) */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+
+/* Styles for the sellerBox */.sellerBox {
+  width: 95%; /* Use a percentage for width to prevent overflow */
+  background-color: #fff;
+  height: auto; /* Adjust height based on content */
+  min-height: 30vh; /* Optional: ensure it doesn't get too small */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for elevation */
+  border-radius: 4px; /* Optional: rounded corners */
+  padding: 15px;
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+  margin-top: 10vh;
+}
+
+/* Styles for row-wise layout */
+/* .row-wise {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+} */
+ .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+ }
+ .buttons{
+  background-color:#ededed;
+  padding:2px;
+  margin:2px;
+  border-radius: 2px;
+ }
+
+ .highlighted{
+  height: 3vh;
+  background-color: green;
+  border-radius: 4px;
+  padding: 2px;
+  color: white;
+  font-size: 12px;
+ }
+ .status-pending {
+  height: 3vh;
+  background-color: #fff3cd; /* Light yellow background */
+  border-radius: 4px;
+  padding: 2px;
+  color: #856404; /* Dark yellow text */
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
+}
+
+.status-accepted {
+  background-color: #d4edda; /* Light green background */
+  border-radius: 4px;
+  padding: 2px;
+  color: #155724; /* Dark green text */
+  font-size: 12px;
+  text-align: center;
+}
+
+.dashboard-boxes{
+  width : 20vw;
+  height: 15vh;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for elevation */
+  background-color: #fff;
+  border-radius: 4px; /* Optional: rounded corners */
+  padding: 15px;
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+  margin-top: 10vh;
+}
+
+.greyBackground2 {
+  flex: 1;
+  background-color: #ededed;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 50px 0;
+  box-sizing: border-box;
+}
+
+.greyBackground3 {
+  flex: 1;
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  align-items: center; /* Centers children horizontally */
+  padding: 50px 0;
+  box-sizing: border-box;
+}
+.columnContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.rowContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10vh;
+}
+
+.rowContainerSmall {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+.iconStyle {
+  color: #ffb300;
+  font-size: 40px;
+}
+
+.iconTextContainer {
+  margin-left: 10px;
+}
+.greyText {
+  color: grey;
+}

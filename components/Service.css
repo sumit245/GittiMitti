@@ -1,0 +1,115 @@
+.ptb-30 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.bg-grey {
+  background-color: #f7f7f7;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section-title span {
+  color: #ff6f61;
+}
+
+.divider {
+  margin-top: 20px;
+}
+
+.divider img {
+  width: 50px;
+}
+
+.col-lg-3 {
+  width: 25%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.popular-todo-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-thumbnail-area {
+  position: relative;
+  margin-bottom: 15px;
+  flex: 1 1 200px;
+  margin-right: 20px;
+}
+
+.item-thumb {
+  width: 100%;
+  overflow: hidden;
+}
+
+.item-thumb img:hover {
+  transform: scale(1.05);
+}
+
+.todo-content .title a:hover {
+  color: #ff6f61;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-style-main {
+  background-color: #ff6f61;
+  color: #fff;
+}
+
+.btn-style-main:hover {
+  background-color: #e65c54;
+}
+
+.btn-style-main-dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-style-main-dark:hover {
+  background-color: #555;
+}
+
+.todo-footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.todo-content {
+  margin-top: 15px;
+}

@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .col-lg-8 {
+    width: 66.66667%;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .site-main {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .section-header {
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .popular-todo-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f9f9f9;
+  }
+  
+  .item-thumb img {
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+  }
+  .content-entry-wrap {
+    flex: 3 1 400px;
+  }
+  
+  .todo-content {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  .service-head {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .service-head a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .service-head a:hover {
+    color: #007bff;
+  }
+  .readmore {
+    font-size: 0.8em;
+    color: #007bff;
+    margin-left: 5px;
+  }
+  .todo-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  .todo-location {
+    font-weight: bold;
+    color: #555;
+  }
+  .todo-number {
+    color: #777;
+  }
+  .todo-summary p {
+    margin: 0;
+    color: #666;
+  }
+  .todo-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .todo-cat {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+  }
+  .todo-cat:hover {
+    color: #0056b3;
+  }
+  .icon-phone {
+    margin-right: 5px;
+    font-size: 1.2em;
+    color: #007bff;
+  }
+  
+  .single-listing-todo .section-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .single-listing-todo h4 {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .service-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .service-list li {
+    margin-bottom: 10px;
+  }
+  
+  .service-list li span {
+    color: #28a745;
+    margin-right: 10px;
+  }

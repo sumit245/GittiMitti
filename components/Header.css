@@ -1,0 +1,186 @@
+/* Header Container */
+.header-container {
+  width: 100%;
+  background-color: #232f3e;
+  color: white;
+}
+
+/* Top Header */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+/* Logo */
+.logo-container .logo {
+  width: 100px;
+}
+
+/* Location */
+.location-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.location-container i {
+  margin-right: 5px;
+}
+
+.location-text span:first-child {
+  display: block;
+}
+
+.location-text span:last-child {
+  font-weight: bold;
+}
+
+/* Search Bar */
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.search-dropdown {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #ddd;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-dropdown span {
+  margin-right: 5px;
+}
+
+.search-input {
+  flex-grow: 1;
+  border: none;
+  padding: 10px;
+}
+
+.search-icon {
+  padding: 10px;
+  background-color: #febd69;
+  border-radius: 0 5px 5px 0;
+  color: black;
+}
+
+/* Options Container */
+.options-container {
+  display: flex;
+  align-items: center;
+}
+
+.language-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.flag {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.account-container {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.account-container span {
+  display: block;
+}
+
+.account-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.orders-container {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.orders-container span {
+  display: block;
+}
+
+.cart-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cart-container .cart-text {
+  margin-left: 5px;
+}
+
+.cart-container .cart-count {
+  background-color: #f08804;
+  color: black;
+  padding: 2px 6px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+/* Bottom Header */
+.header-bottom {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #131a22;
+}
+
+.all-categories {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.all-categories i {
+  margin-right: 5px;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links ul li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.special-deal {
+  margin-left: auto;
+  cursor: pointer;
+}
+/* for Hober */
+.header-bottom .all-categories:hover,
+.header-bottom .nav-links ul li:hover,
+.header-bottom .special-deal:hover {
+  cursor: pointer;
+}
+
+.header-bottom .all-categories:hover i,
+.header-bottom .special-deal:hover span {
+  color: #ff0000;
+}
+
+.header-bottom .nav-links ul li:hover {
+  background-color: hsl(16, 95%, 49%);
+  padding: 5px;
+  border-radius: 5px;
+}
+ 
