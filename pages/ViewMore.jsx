@@ -7,20 +7,23 @@ import "./ViewMore.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { productsData } from "./Aggregate";
+import Navbar from "../components/Navbar";
 
 const ViewMore = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const products = useSelector((state) => state.products.list);
-
-  useEffect(() => {
-    dispatch(setProducts(productsData));
-  }, [dispatch]);
-
-  const handleNavigation = (product) => {
-    dispatch(selectProduct(product));
+  const handleNavigation = () => {
+    // dispatch(selectProduct(product));
     navigate('/productDescriptiontemp');
   };
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
+  // const products = useSelector((state) => state.products.list);
+
+  // useEffect(() => {
+  //   dispatch(setProducts(productsData));
+  // }, [dispatch]);
+
+  
 
   // const navigate = useNavigate();
 
@@ -30,7 +33,7 @@ const ViewMore = () => {
 
   return (
     <>
-      <Header />
+      <Navbar />
       <div
         style={{
           fontSize: "32px",
@@ -62,51 +65,51 @@ const ViewMore = () => {
             <h2 className="section-title">Product Description</h2>
           </div>
 
-          {products.map((product) => (
-            <div className="popular-todo-item todo-item-list" key={product.id}>
+          {/* {products.map((product) => ( */}
+            <div className="popular-todo-item todo-item-list">
               <div className="todo-thumbnail-area">
                 <figure className="item-thumb">
-                  <img src={product.img} alt="Thumbnail" />
+                  <img src="https://5.imimg.com/data5/ANDROID/Default/2020/8/IG/OC/HI/63809717/product-jpeg-500x500.jpeg"  alt="Thumbnail" />
                 </figure>
               </div>
               <div className="content-entry-wrap">
                 <div className="todo-content services">
                   <h3 className="title service-head">
-                    <a onClick={() => handleNavigation(product)}>
-                      {product.title}{" "}
+                    <a onClick={handleNavigation}>
+                    10 mm Aggregate (Rodi)
                       <span className="readmore">View more</span>
                     </a>
                   </h3>
                   <div className="todo-meta">
                     <div className="todo-location">Quality :</div>
-                    <div className="todo-number">{product.quality}</div>
+                    <div className="todo-number">Class 1</div>
                   </div>
                   <div className="todo-meta">
-                    <div className="todo-location">Size :</div>
-                    <div className="todo-number">{product.size}</div>
+                    <div className="todo-location">Product Size:</div>
+                    <div className="todo-number">10 mm</div>
                   </div>
                   <div className="todo-meta">
                     <div className="todo-location">Brand :</div>
-                    <div className="todo-number">{product.brand}</div>
+                    <div className="todo-number">Rodi Dust</div>
                   </div>
                   <div className="todo-summary">
-                    <p>{product.description}</p>
+                    <p>"The 10 mm Aggregate Stone Rodi is a versatile limestone product.</p>
                   </div>
                 </div>
                 <div className="todo-footer view-more">
-                  {product.contactNumbers.map((number, index) => (
+                  {/* {product.contactNumbers.map((number, index) => ( */}
                     <a
-                      href={`tel:${number}`}
+                      // href=productDescriptiontemp
                       className="todo-cat todo-cat-restaurant"
-                      key={index}
+                      
                     >
-                      <span className="icon-phone" /> {number}
+                      <span className="icon-phone" /> 919582872872
                     </a>
-                  ))}
+                  {/* ))} */}
                 </div>
               </div>
             </div>
-          ))}
+          {/* ))} */}
 
           <div className="single-listing-todo">
             <div className="section-header text-left">

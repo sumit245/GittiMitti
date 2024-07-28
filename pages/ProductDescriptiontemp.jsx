@@ -5,39 +5,40 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
+import Navbar from "../components/Navbar";
 
 export default function ProductDescriptiontemp() {
-  const product = useSelector((state) => state.products.selectedProduct);
+  // const product = useSelector((state) => state.products.selectedProduct);
 
-  if (!product) return <div>Loading...</div>;
+  // if (!product) return <div>Loading...</div>;
   
   // const location = useLocation();
   // const product = location.state.product;
 
   return (
     <>
-      <Header />
-      <div className="row-wise">
+      <Navbar/>
+      <div className="row-wise" style={{marginTop:"5vh"}}>
         <div className="column">
-          <img src={product.img} className="leftImg" alt={product.title} />
+          <img src="https://5.imimg.com/data5/ANDROID/Default/2020/8/IG/OC/HI/63809717/product-jpeg-500x500.jpeg" className="leftImg" alt="10 mm Aggregate (Rodi)" />
         </div>
 
         <div className="column">
-          <p className="bigHeading">{product.title}</p>
+          <p className="bigHeading">10 mm Aggregate (Rodi)</p>
           <p
             className="smallHeading"
             style={{ color: "green", fontWeight: "bold", marginBottom: "10px" }}
           >
             <FontAwesomeIcon icon={faStar} />
-            {product.rating} RATING
+            4 RATING
           </p>
           <p className="smallHeading" style={{ marginBottom: "10px" }}>
-            {product.boughtCount} bought in past month
+          3k+ bought in past month
           </p>
           <hr></hr>
-          <p className="bigHeading">Rs. {product.price}/Tonne</p>
+          <p className="bigHeading">Rs. 560/Tonne</p>
           <p className="smallHeading">Inclusive of all taxes</p>
-          <p className="text">Sold By - {product.seller}</p>
+          <p className="text">Sold By - Royal Trading Company, Hisar, Haryana</p>
           <p
             style={{ fontWeight: "bold", color: "blue", marginBottom: "10px" }}
           >
@@ -48,10 +49,10 @@ export default function ProductDescriptiontemp() {
             About this item
           </p>
           <p className="smalltext">
-            Thickness: <span>{product.size}</span>
+            Thickness: <span>10 mm</span>
           </p>
           <p className="smalltext">
-            Grade Standard: <span>{product.quality}</span>
+            Grade Standard: <span>Class 1</span>
           </p>
           <p className="smalltext">
             Form: <span>Solid</span>
@@ -69,7 +70,7 @@ export default function ProductDescriptiontemp() {
           }}
         >
           <p className="smalltext">One-time purchase:</p>
-          <p className="bigHeading">Rs. {product.price}/Tonne</p>
+          <p className="bigHeading">Rs. 560/Tonne</p>
           <p className="smalltext">
             FREE delivery Saturday, 13 July on your first order.
           </p>
@@ -86,7 +87,7 @@ export default function ProductDescriptiontemp() {
           <p className="smalltext">Dispatched in 24 hours</p>
           <p className="smalltext">Ships from : Amazon</p>
           <p className="smalltext">
-            Sold by : {product.seller}
+            Sold by : Royal Trading Company, Hisar, Haryana
           </p>
           <p style={{ marginTop: "12px", fontWeight: "bold" }}>Quantity: </p>
           <button className="continue_button">Add To cart</button>
