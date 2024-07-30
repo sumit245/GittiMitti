@@ -1,8 +1,9 @@
-import React from "react";
+import { useState } from "react";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ cartCount = 0 }) => {
+  // const [cartCount, setCartCount] = useState(0)
   const navigate = useNavigate();
 
   const handleSignin = () => {
@@ -59,7 +60,7 @@ const Header = () => {
             <div className="cart-container">
               <i className="fas fa-shopping-cart"></i>
               <span className="cart-text">Cart</span>
-              <span className="cart-count">0</span>
+              <span className="cart-count">{cartCount}</span>
             </div>
           </div>
         </div>
@@ -75,7 +76,7 @@ const Header = () => {
               <li>Jamuna Sand</li>
               <li>Bricks & Blocks</li>
               <li>RCM</li>
-              {}
+              { }
               <li>Cement</li>
               <li>Steel/TMT Bars</li>
               <li>Interlocking Floor Tiles</li>

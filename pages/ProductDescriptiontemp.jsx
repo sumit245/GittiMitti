@@ -1,22 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../components/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
+import Button from "../components/Button";
 
 export default function ProductDescriptiontemp() {
   const product = useSelector((state) => state.products.selectedProduct);
+  const [cartCount, setCartCount] = useState(0)
 
   if (!product) return <div>Loading...</div>;
-  
+
   // const location = useLocation();
   // const product = location.state.product;
 
   return (
     <>
-      <Header />
+      <Header cartCount={cartCount} />
       <div className="row-wise">
         <div className="column">
           <img src={product.img} className="leftImg" alt={product.title} />
@@ -89,13 +91,9 @@ export default function ProductDescriptiontemp() {
             Sold by : {product.seller}
           </p>
           <p style={{ marginTop: "12px", fontWeight: "bold" }}>Quantity: </p>
-          <button className="continue_button">Add To cart</button>
-          <button
-            className="continue_button"
-            style={{ backgroundColor: "green" }}
-          >
-            Buy Now
-          </button>
+          <Button title="Add to Cart" action={() => setCartCount(val => val + 1)} />
+          <Button style={{ backgroundColor: "green" }} title="Buy now" />
+
           <p className="smalltext" style={{ marginTop: "12px" }}>
             Secure transaction
           </p>
