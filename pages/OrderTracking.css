@@ -1,0 +1,61 @@
+.order-tracking-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-left: 280px;
+  }
+  
+  .tracking-form {
+    flex: 1;
+    padding: 20px;
+    max-width: 500px;
+  }
+  
+  .tracking-form h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  .tracking-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .tracking-form p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .tracking-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+  
+  .tracking-form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .tracking-image {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .tracking-image img {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .tracking-form button:hover {
+    background-color: #0d62d0;
+   
+  }

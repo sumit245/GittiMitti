@@ -1,30 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Service.css";
+import Rating from "@mui/material/Rating";
 import products from "./products";
-import Header from "./Header";
 import Button from "./Button";
 
-
 const Service = () => {
-
-  const [bproducts, setBProducts] = useState([])
-
   const navigate = useNavigate();
 
-  const handleViewMore = (route) => {
-    navigate(`/${route}`); // Use backticks for template literals to interpolate variables
+  const [productb, setPRoductb] = useState([]);
+
+  const handleViewMore = () => {
+    navigate('/viewmore');
   };
+
   const handleInquireNow = () => {
-    // Logic to show modal or handle inquiry
-    alert('Inquire Now clicked!');
+    alert("Inquire Now clicked!");
   };
 
   useEffect(() => {
-    setBProducts(products)
-  }, [products])
+    setPRoductb(products);
+  }, [productb]);
 
   return (
+
     <>
       <section className="ptb-30 bg-grey">
         <div className="container">
@@ -40,7 +39,7 @@ const Service = () => {
             </div>
           </div>
           <div className="row">
-            {bproducts.map((product, index) => (
+            {productb.map((product, index) => (
               <div className="col-lg-3" key={index}>
                 <div className="popular-todo-item">
                   <div className="todo-thumbnail-area">
@@ -48,17 +47,30 @@ const Service = () => {
                       <img src={product.img} alt={product.alt} />
                     </figure>
                     <div className="todo-overlay-info">
-                      <div className="todo-type rated">top rated</div>
+                      <Rating
+                        name={`rating-${index}`}
+                        value={product.rating}
+                        readOnly
+                      />
                     </div>
                   </div>
                   <div className="todo-content">
                     <h3 className="title">
                       <a>{product.title}</a>
                     </h3>
-
-                    <Button action={() => handleViewMore(product.route)} title="View More" />
-                    <Button action={handleInquireNow} title="Inquire Now" style={{ backgroundColor: "#000" }} />
-
+                    {/* <a
+                      className="btn btn-style-main first"
+                      onClick={handleViewMore}
+                    >
+                      View More
+                    </a> */}
+                    <Button title="View more" className="btn btn-style-main first" action={handleViewMore} />
+                    <button
+                      className="btn btn-style-main-dark second"
+                      onClick={handleInquireNow}
+                    >
+                      Inquire Now
+                    </button>
                   </div>
                 </div>
               </div>

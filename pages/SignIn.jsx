@@ -1,18 +1,21 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../src/App.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../actions/actions";
 
 export default function SignIn() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
   const [error, setError] = useState(""); // To handle errors
-  
+
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
-  const handleSellerSignin =() =>{
+  const handleSellerSignin = () => {
     navigate("/sellerSignin");
   }
 
@@ -20,7 +23,9 @@ export default function SignIn() {
     if (email) {
       try {
         // Pass email as state to the VerificationRequired component
-        navigate("/signinpass", { state: { email } });
+        // navigate("/signinpass", { state: { email } });
+        await dispatch(loginUser("sumit", "1234"))
+        navigate('/')
       } catch (error) {
         // Log the full error object
         console.error('Error during OTP verification:', error);
@@ -40,7 +45,7 @@ export default function SignIn() {
     navigate("/signinpass");
   };
   return (
-    <>  
+    <>
       <div
         className="container"
         style={{ width: "100vw", paddingBottom: "30px" }}
