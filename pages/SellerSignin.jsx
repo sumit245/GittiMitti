@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "../src/App.css";
 import { useNavigate } from "react-router-dom";
+import { signIn } from "../src/vendorApi"; // Adjust the path as needed
+import Link from "@mui/material/Link";
 
 export default function SellerSignin() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleCreateAccount = () => {
-    navigate("/sellerCreateAccount");
+  const handleSubmit = async () => {
+    setLoading(true);
+    try {
+      const response = await signIn({ email, password });
+      // Handle successful sign-in, e.g., redirect to another page or show a success message
+      navigate("/sellerHome"); // Adjust the route as needed
+    } catch (error) {
+      // Handle errors, e.g., show error message
+      setError(error.message || "An error occurred during sign-in");
+    } finally {
+      setLoading(false);
+    }
   };
+
+  const passwordAssistance = () => {
+    navigate("/sellerpasswordassistance");
+  };
+
   return (
     <>
       <div
@@ -19,24 +40,39 @@ export default function SellerSignin() {
           alt="logo"
           className="logo"
         />
-        <div className="box" style={{ height: "72vh" }}>
+        <div className="box" style={{ height: "78vh" }}>
           <p style={{ fontWeight: "500", fontSize: "28px" }}>
-            Sign in with business credenatils
+            Sign in with business credentials
           </p>
           <p className="text" style={{ fontWeight: "500" }}>
             Email or mobile phone number
           </p>
-          <input className="textInput" />
+          <input
+            className="textInput"
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <p className="text" style={{ fontWeight: "500" }}>
             Password
           </p>
-          <input className="textInput" />
+          <Link underline="none" onClick={passwordAssistance}>
+              Forgot Password?
+            </Link>
+          <input
+            className="textInput"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {error && <p className="errorText">{error}</p>}
           <button
             className="continue_button"
             style={{ color: "white" }}
-            onClick={handleCreateAccount}
+            onClick={handleSubmit}
+            disabled={loading}
           >
-            Continue{" "}
+            {loading ? "Signing in..." : "Continue"}
           </button>
           <p className="textSmall">
             By continuing, you agree to <span>Builer's Conditions of Use</span>{" "}
@@ -73,7 +109,10 @@ export default function SellerSignin() {
         >
           New to Builder?
         </p>
-        <button className="transparentButton" onClick={handleCreateAccount}>
+        <button
+          className="transparentButton"
+          onClick={() => navigate("/sellerAccountDetails")}
+        >
           Create your Builder account
         </button>
       </div>

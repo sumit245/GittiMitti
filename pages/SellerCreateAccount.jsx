@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "../src/App.css";
 import { useNavigate } from "react-router-dom";
+import { createAccount } from "../src/api"; // Adjust the path as needed
 
 const SellerCreateAccount = () => {
   const navigate = useNavigate();
-  const handleCreateAccount = () => {
-    // Define the function to handle the create account button click
-    window.location.href = "/CreateAccount";
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [fname, setFname] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleCreateAccount = async () => {
+    setLoading(true);
+    try {
+      await createAccount({ email, password, mobile, fname });
+      navigate("/sellerSignin"); // Adjust the route as needed
+    } catch (error) {
+      setError(error.message || "An error occurred while creating the account");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div
-      className="container"
-      style={{ width: "100vw", paddingBottom: "30px" }}
-    >
+    <div className="container" style={{ width: "100vw", paddingBottom: "30px" }}>
       <img
         src="https://png.pngtree.com/png-clipart/20220605/original/pngtree-builders-logo-png-image_7965543.png"
         alt="logo"
@@ -31,7 +43,7 @@ const SellerCreateAccount = () => {
         }}
       >
         <p style={{ fontWeight: 500, fontSize: "28px", color: "white" }}>
-          Reshap buying for your organisation
+          Reshape buying for your organization
         </p>
 
         {/* Feature 1 */}
@@ -39,14 +51,14 @@ const SellerCreateAccount = () => {
           <img
             src="https://cdn-icons-png.flaticon.com/256/12404/12404537.png"
             style={{ height: "70px", position: "absolute" }}
+            alt="GST Invoice & Bulk Discount"
           />
           <div style={{ marginLeft: "100px" }}>
             <p style={{ color: "white", fontSize: "17px" }}>
               GST Invoice & Bulk Discount
             </p>
             <p style={{ color: "white" }}>
-              Save up to 28% more with GST input credit and avail discount on
-              multi-unit purchases.
+              Save up to 28% more with GST input credit and avail discount on multi-unit purchases.
             </p>
           </div>
         </div>
@@ -58,14 +70,14 @@ const SellerCreateAccount = () => {
           <img
             src="https://png.pngtree.com/png-vector/20230413/ourmid/pngtree-analytics-line-icon-vector-png-image_6703463.png"
             style={{ height: "70px", position: "absolute" }}
+            alt="Business Analytics"
           />
           <div style={{ marginLeft: "100px" }}>
             <p style={{ color: "white", fontSize: "17px" }}>
               Business Analytics
             </p>
             <p style={{ color: "white" }}>
-              Track and monitor spending by account organisation with dynamic
-              charts and tables.
+              Track and monitor spending by account organization with dynamic charts and tables.
             </p>
           </div>
         </div>
@@ -77,34 +89,62 @@ const SellerCreateAccount = () => {
           <img
             src="https://static.vecteezy.com/system/resources/thumbnails/010/159/990/small_2x/people-icon-sign-symbol-design-free-png.png"
             style={{ height: "70px", position: "absolute" }}
+            alt="Secure Your Account"
           />
           <div style={{ marginLeft: "100px" }}>
             <p style={{ color: "white", fontSize: "17px" }}>
               Secure Your Account
             </p>
             <p style={{ color: "white" }}>
-              Add more colleagues to your account for making business purchases
-              instead of sharing your login credentials.
+              Add more colleagues to your account for making business purchases instead of sharing your login credentials.
             </p>
           </div>
         </div>
       </div>
 
       {/* Sign-in box */}
-      <div className="box">
+      <div className="box" style={{ height: "100vh" }}>
         <p style={{ fontWeight: 500, fontSize: "28px" }}>
-          Let us create your free Amazon Business account
+          Let us create your free Builder Business account
         </p>
         <p className="text" style={{ fontWeight: 500 }}>
-          Enter the email you'd like to use for your business account
+          Enter the following details for your business account
         </p>
-        <input className="textInput" placeholder="Enter email address" />
-        <button className="continue_button" onClick={handleCreateAccount}>
-          Get started
+        <input
+          className="textInput"
+          placeholder="Enter email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          className="textInput"
+          placeholder="Enter password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <input
+          className="textInput"
+          placeholder="Enter mobile number"
+          value={mobile}
+          onChange={(e) => setMobile(e.target.value)}
+        />
+        <input
+          className="textInput"
+          placeholder="Enter first name"
+          value={fname}
+          onChange={(e) => setFname(e.target.value)}
+        />
+        {error && <p className="errorText">{error}</p>}
+        <button
+          className="continue_button"
+          onClick={handleCreateAccount}
+          disabled={loading}
+        >
+          {loading ? "Creating account..." : "Get started"}
         </button>
         <p className="textSmall">
-          By continuing, you agree to <span>Builder's Conditions of Use</span>{" "}
-          and <span>Privacy Notice</span>.
+          By continuing, you agree to <span>Builder's Conditions of Use</span> and <span>Privacy Notice</span>.
         </p>
         <p
           className="textSmall"
@@ -127,7 +167,10 @@ const SellerCreateAccount = () => {
       <p className="textSmall" style={{ color: "#A2A6A8", marginTop: "13px" }}>
         New to Builder?
       </p>
-      <button className="transparentButton" onClick={handleCreateAccount}>
+      <button
+        className="transparentButton"
+        onClick={() => navigate("/sellerAccountDetails")}
+      >
         Create your Builder account
       </button>
 

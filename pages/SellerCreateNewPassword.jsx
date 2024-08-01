@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { updatePassword } from "../src/api"; // Adjust import path
+import { updatePassword } from "../src/vendorApi"; // Adjust import path
 
-export default function CreateNewPassword() {
+export default function SellerCreateNewPassword() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [feedback, setFeedback] = useState({ error: "", success: "" });
@@ -16,7 +16,7 @@ export default function CreateNewPassword() {
       try {
         await updatePassword(newPassword, email);
         setFeedback({ success: "Password updated successfully!", error: "" });
-        navigate("/passwordResetDone");
+        navigate("/sellerpasswordResetDone");
       } catch (err) {
         setFeedback({
           error: err.message || "An error occurred.",

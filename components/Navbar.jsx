@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <div>
-        <div style={{display:"flex", width:"100%", justifyContent:"center", backgroundColor:"#fcca19"}}>
+        
         <nav className="navbar">
         <div className="navbar-left">
           <div className="navbar-contact">
@@ -67,9 +67,9 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-        </div>
+        
      
-     <div style={{display:"flex", width:"100%", justifyContent:"center"}}>
+     <div >
      <nav className="second-navbar">
         <div className="second-navbar-left">
           <div className="company-logo">GittiMitti</div>

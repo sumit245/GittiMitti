@@ -1,0 +1,9 @@
+export const STATIC_DATA = {
+    backgroundImage: 'https://images.pexels.com/photos/194096/pexels-photo-194096.jpeg?auto=compress&cs=tinysrgb&w=600',
+    productImage: 'https://5.imimg.com/data5/ANDROID/Default/2020/8/IG/OC/HI/63809717/product-jpeg-500x500.jpeg',
+    productSummary: "The 10 mm Aggregate Stone Rodi is a versatile limestone product.",
+    additionalDetails: "The building material used in various construction processes, known as aggregate or commonly called Rodi is exceptionally versatile and is effectively used in a range of works – from creating a seating area within a garden to creating a hardwearing and cost effective driveway. It is the inert material mixed with a binding material (cement, lime) in the preparation of mortar and concrete. It is one of the three principal ingredients of concrete. It comes in different sizes. In concrete, these pieces of aggregate are bound together by a mixture of cement, stone dust/crushed sand, and water to produce a material that is initially moldable and over time develops strength and becomes stiff. The easiest way to choose the right type of aggregate is to choose the best building material supplier near you, as a good construction material supplier will supply the right type of aggregate along with its thorough knowledge.",
+    coarseAggregate: "Coarse aggregates are irregular broken pieces of stone, retaining over a 4.75 mm sieve. Diameter ranges from 10 mm to 65 mm. Most commonly used types include 10 mm, 20 mm, 40 mm, and 65 mm aggregates, each suited for different construction purposes.",
+    fineAggregate: "Fine aggregate passes through a sieve size of 4.75 mm and retains on a 0.075 mm sieve. Crushed sand, river sand, and crushed stone sand are major sources. These aggregates fill voids between coarse aggregates and are used in plaster, mortar, concrete, and road pavement layers."
+  };
+  

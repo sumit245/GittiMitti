@@ -6,7 +6,7 @@
     background-color: #fcca19;
     border-bottom: 1px solid #e0e0e0;
     height: 7vh;
-    width: 80vw;
+    width: 100%;
   }
   
   .second-navbar {
@@ -106,7 +106,7 @@
   .search-box {
     display: flex;
     align-items: center;
-    width: 550px;
+    width: 50vw;
     padding: 5px;
     border-radius: 4px;
     margin-right: 20px;

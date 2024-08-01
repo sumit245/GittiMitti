@@ -82,7 +82,7 @@ export default function SignIn() {
           <p className="text" style={{ fontWeight: "500" }}>
             Are you a seller?
           </p>
-          <button
+          <a
             className="textSmall"
             style={{
               color: "#3383FF",
@@ -92,7 +92,7 @@ export default function SignIn() {
             onClick={handleSellerSignin}
           >
             Sign In to  Builder Business
-          </button>
+          </a>
         </div>
         <p
           className="textSmall "
@@ -100,7 +100,7 @@ export default function SignIn() {
         >
           New to Builder?
         </p>
-        <button className="transparentButton" onClick={handleCreateAccount}>
+        <button className="continue_button" onClick={handleCreateAccount} style={{width:"25vw"}}>
           Create your Builder account
         </button>
       </div>

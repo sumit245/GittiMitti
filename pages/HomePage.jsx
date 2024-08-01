@@ -16,8 +16,7 @@ const HomePage = () => {
       <Navbar />
       <div style={{width:"100%", justifyContent:"center", display:"flex"}}>
         </div>
-        <Horizontal/>
-      <div style={{display:"flex", flexDirection:"row", width:"100%",height:"60vh", justifyContent:"center"}}>
+      <div style={{display:"flex", flexDirection:"row", width:"100%",height:"80vh", justifyContent:"center"}}>
       <Menu/>    
       <ImageSlider/>
       </div>

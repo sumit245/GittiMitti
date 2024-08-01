@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createAccount } from "../src/api"; // Adjust import path
+import { createAccount } from "../src/vendorApi"; // Adjust import path
 
-export default function CreateAccount() {
+export default function SellerAccountDetails() {
   const [fname, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -16,11 +16,10 @@ export default function CreateAccount() {
     event.preventDefault(); // Prevent default form submission
 
     try {
-      // Call the API function to create the account
       await createAccount({ fname, email, mobile, password });
       setSuccess("Account created successfully!");
       setError("");
-      navigate("/signIn"); // Redirect to sign-in page or another page as needed
+      navigate("/sellerSignin");
     } catch (err) {
       setError(err.message || "An error occurred while creating the account.");
       setSuccess("");
@@ -28,7 +27,7 @@ export default function CreateAccount() {
   };
 
   const handleSignin = () => {
-    navigate("/signIn");
+    navigate("/sellerSignin");
   };
 
   return (
@@ -105,23 +104,6 @@ export default function CreateAccount() {
             {error && <p className="error-message">{error}</p>}
             {success && <p className="success-message">{success}</p>}
           </form>
-
-          <hr />
-
-          <p className="text" style={{ fontWeight: "500" }}>
-            Buying for work?
-          </p>
-          <p
-            className="textSmall"
-            style={{
-              color: "#3383FF",
-              fontWeight: "bold",
-            }}
-          >
-            Create a free business account
-          </p>
-
-          <hr />
 
           <p className="text">Already have an account?</p>
           <button

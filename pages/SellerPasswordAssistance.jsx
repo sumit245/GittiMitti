@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { sendOTP } from "../src/api"; // Adjust import path as needed
+import { sendOTP } from "../src/vendorApi"; // Adjust import path as needed
 
-export default function PasswordAssistance() {
+export default function SellerPasswordAssistance() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -10,13 +10,15 @@ export default function PasswordAssistance() {
   const handleEmailChange = (e) => setEmail(e.target.value);
 
   const verify = async () => {
-    if (!email) return alert("Please enter your email address.");
+    if (!email) {
+      return alert("Please enter your email address.");
+    }
     
     try {
       await sendOTP(email);
-      navigate("/verificationrequired", { state: { email } });
+      navigate("/sellerverificationrequired", { state: { email } });
     } catch (err) {
-      console.error('Error during OTP verification:', err);
+      console.error('Error during OTP request:', err);
       setError(err.message || "An error occurred. Please try again.");
     }
   };
@@ -31,8 +33,8 @@ export default function PasswordAssistance() {
         />
         <div className="box" style={{ height: "45vh" }}>
           <p style={{ fontWeight: "500", fontSize: "28px" }}>Password Assistance</p>
-          <p className="text">Enter the email address or mobile phone number associated with your Amazon account.</p>
-          <p className="text" style={{ fontWeight: "bold" }}>Email or mobile phone number</p>
+          <p className="text">Enter the email address associated with your Builder account.</p>
+          <p className="text" style={{ fontWeight: "bold" }}>Email address</p>
           <input
             className="textInput"
             type="email"
@@ -44,8 +46,8 @@ export default function PasswordAssistance() {
           {error && <p className="error">{error}</p>}
         </div>
         <div style={{ width: "25vw", marginTop: "25px" }}>
-          <p className="mediumtext">Has your email address or mobile phone number changed?</p>
-          <p className="textSmall">If you no longer use the e-mail address associated with your Builder account, you may contact Customer Service for help restoring access to your account.</p>
+          <p className="mediumtext">Has your email address changed?</p>
+          <p className="textSmall">If you no longer use the email address associated with your Builder account, you may contact Customer Service for help restoring access to your account.</p>
         </div>
       </div>
       <div className="SignIn_footer">
